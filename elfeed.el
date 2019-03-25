@@ -24,12 +24,15 @@
 (defun elfeed-show-open-arxiv-pdf (&optional use-generic-p)
   (interactive "P")
   (let ((link (elfeed-entry-link elfeed-show-entry)))
-    (let ((link (replace-regexp-in-string "/abs/" "/pdf/" link)))
-      (when link
-	(message "Sent to browser: %s" link)
-	(if use-generic-p
-            (browse-url-generic link)
-          (browse-url link))))))
+    (progn
+      (let ((link (replace-regexp-in-string "/abs/" "/pdf/" link)))
+	(when link
+	  (message "Sent to browser: %s" link)
+	  (if use-generic-p
+              (browse-url-generic link)
+            (browse-url link))))
+      (apply #'elfeed-tag elfeed-show-entry '(viewed))
+      )))
 (define-key elfeed-show-mode-map (kbd "B") 'elfeed-show-open-arxiv-pdf)
 
 
@@ -88,7 +91,7 @@
 (add-hook
  'elfeed-new-entry-hook
  (lambda (entry) (funcall 'elfeed-filter entry
-			  "\\b\\(financial\\|malware\\|android\\|wifi\\|FPGA\\|music\\|SQL\\|face recognition\\|object detection\\|privacy\\|question answering\\|social media\\|knowledge graph\\|compressive sensing\\|speaker\\|dialogue\\|remote-sensing\\|urban\\)\\b"
+			  "\\b\\(financial\\|malware\\|android\\|wifi\\|FPGA\\|music\\|SQL\\|face recognition\\|object detection\\|privacy\\|question answering\\|social media\\|knowledge graph\\|compressive sensing\\|speaker\\|dialogue\\|remote-sensing\\|urban\\|hyperparameter\\)\\b"
 			  '(others hide) '(unread))))
 
 ;; stupid
