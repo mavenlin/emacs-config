@@ -171,4 +171,8 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
+;; ace-window
+(global-set-key (kbd "M-o") 'ace-window)
+(setq aw-dispatch-always t)
+
 (load "~/.emacs.d/elfeed.el")
