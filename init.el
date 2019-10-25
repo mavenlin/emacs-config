@@ -34,6 +34,8 @@
 
 (global-set-key (kbd "M-n") 'mc/mark-next-like-this)
 (global-set-key (kbd "M-N") 'mc/mark-next-word-like-this)
+
+(global-set-key (kbd "C-x g") 'magit-status)
 ;; (global-set-key (kbd "M-[") 'mc/mark-previous-word-like-this)
 ;; (global-set-key (kbd "C-c w") 'mc/mark-all-words-like-this)
 ;;
