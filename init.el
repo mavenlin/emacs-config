@@ -92,8 +92,8 @@
 (add-hook 'python-mode-hook 'smart-tab-mode)
 
 ;; load protobuf
-(require 'protobuf-mode)
-(add-to-list 'auto-mode-alist '("\\.proto\\'" . protobuf-mode))
+;; (require 'protobuf-mode)
+;; (add-to-list 'auto-mode-alist '("\\.proto\\'" . protobuf-mode))
 
 ;; markdown mode
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
