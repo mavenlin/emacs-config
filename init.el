@@ -1,8 +1,9 @@
 ;; list the repositories containing them
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-			 ("melpa" . "http://melpa.milkbox.net/packages/")))
+                         ;; ("marmalade" . "http://marmalade-repo.org/packages/")
+			 ))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 ;; activate all the packages (in particular autoloads)
 (package-initialize)
