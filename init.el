@@ -129,7 +129,8 @@
 
 ;; powerline
 (require 'powerline)
-(powerline-default-theme)
+(load "~/.emacs.d/powerline.el")
+(powerline-my-theme)
 
 ;; projectile
 (projectile-global-mode)
