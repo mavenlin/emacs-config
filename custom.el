@@ -35,7 +35,7 @@
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (auto-dim-other-buffers vterm tide cquery ace-window google-c-style helm-ack helm magit-find-file magit-gh-pulls magit-gitflow magit-lfs magit-popup elfeed-web elfeed-org elfeed-goodies elfeed fill-column-indicator slack oauth2 oauth zenburn-theme zenburn yaml-mode visual-regexp-steroids swiper spacegray-theme smart-tab scala-mode python-environment powerline outline-magic nzenburn-theme multiple-cursors material-theme markdown-mode markdown-mode+ magit json-mode ibuffer-projectile ibuffer-git helm-themes helm-projectile helm-gtags gh-md ggtags esup epc emacs-cl elpy dakrone-theme cython-mode ctags-update ctags column-enforce-mode cmake-font-lock auto-complete swift-mode magit-svn elpy yasnippet-snippets yasnippet)))
+    (airline-themes auto-dim-other-buffers vterm tide cquery ace-window google-c-style helm-ack helm magit-find-file magit-gh-pulls magit-gitflow magit-lfs magit-popup elfeed-web elfeed-org elfeed-goodies elfeed fill-column-indicator slack oauth2 oauth zenburn-theme zenburn yaml-mode visual-regexp-steroids swiper spacegray-theme smart-tab scala-mode python-environment powerline outline-magic nzenburn-theme multiple-cursors material-theme markdown-mode markdown-mode+ magit json-mode ibuffer-projectile ibuffer-git helm-themes helm-projectile helm-gtags gh-md ggtags esup epc emacs-cl elpy dakrone-theme cython-mode ctags-update ctags column-enforce-mode cmake-font-lock auto-complete swift-mode magit-svn elpy yasnippet-snippets yasnippet)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(python-indent-def-block-scale 2)
  '(python-indent-offset 2)

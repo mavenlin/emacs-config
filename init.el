@@ -130,7 +130,6 @@
 ;; powerline
 (require 'powerline)
 (load "~/.emacs.d/powerline.el")
-(powerline-my-theme)
 
 ;; projectile
 (projectile-global-mode)
@@ -185,7 +184,6 @@
 (autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
-;; auto-dim-other-buffers-mode
-(add-hook 'after-init-hook (lambda ()
-  (when (fboundp 'auto-dim-other-buffers-mode)
-    (auto-dim-other-buffers-mode t))))
+(require 'airline-themes)
+(load-theme 'airline-bubblegum t)
+(airline-my-theme)
