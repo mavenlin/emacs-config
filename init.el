@@ -28,7 +28,8 @@
 (setq markdown-preview-javascript (list "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"))
 (setq markdown-preview-stylesheets (list "http://thomasf.github.io/solarized-css/solarized-light.min.css"))
 
-(set-frame-font "inconsolata 12")
+(if (display-graphic-p) (progn (set-frame-font "inconsolata 14")) (set-frame-font "inconsolata 12"))
+
 
 (load "~/.emacs.d/helm.el")
 
@@ -187,3 +188,6 @@
 (require 'airline-themes)
 (load-theme 'airline-bubblegum t)
 (airline-my-theme)
+
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
