@@ -28,7 +28,7 @@
 (setq markdown-preview-javascript (list "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"))
 (setq markdown-preview-stylesheets (list "http://thomasf.github.io/solarized-css/solarized-light.min.css"))
 
-(set-default-font "inconsolata 12")
+(set-frame-font "inconsolata 12")
 
 (load "~/.emacs.d/helm.el")
 
