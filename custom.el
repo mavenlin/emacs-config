@@ -21,6 +21,7 @@
  '(custom-safe-themes
    (quote
     ("4c9ba94db23a0a3dea88ee80f41d9478c151b07cb6640b33bfc38be7c2415cc4" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "08b8807d23c290c840bbb14614a83878529359eaba1805618b3be7d61b0b0a32" default)))
+ '(ein:output-area-inlined-images t)
  '(elfeed-goodies/entry-pane-position (quote top))
  '(elfeed-goodies/entry-pane-size 0.5)
  '(elfeed-goodies/powerline-default-separator (quote bar))
