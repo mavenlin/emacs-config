@@ -28,8 +28,6 @@
 (setq markdown-preview-javascript (list "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"))
 (setq markdown-preview-stylesheets (list "http://thomasf.github.io/solarized-css/solarized-light.min.css"))
 
-(if (display-graphic-p) (progn (set-frame-font "inconsolata 14")) (set-frame-font "inconsolata 12"))
-
 
 (load "~/.emacs.d/helm.el")
 
@@ -84,7 +82,7 @@
 (add-hook 'c-mode-common-hook 'fci-mode)
 (add-hook 'python-mode-hook 'fci-mode)
 (setq fci-rule-column 80)
-(setq fci-rule-color "brightblack")
+(setq fci-rule-color "lightgray")
 (setq fci-rule-width 1)
 
 ;; (require 'smart-tab)
@@ -189,5 +187,12 @@
 (load-theme 'airline-bubblegum t)
 (airline-my-theme)
 
-(toggle-scroll-bar -1)
-(tool-bar-mode -1)
+(if (display-graphic-p)
+    (progn
+      (toggle-scroll-bar -1)
+      (tool-bar-mode -1))
+)
+
+(case system-type
+   ((gnu/linux) (set-frame-font "inconsolata 10"))
+   ((darwin) (set-frame-font "inconsolata 14")))
