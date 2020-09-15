@@ -85,11 +85,10 @@
 (setq fci-rule-color "lightgray")
 (setq fci-rule-width 1)
 
-;; (require 'smart-tab)
-(add-hook 'c-mode-common-hook 'smart-tab-mode)
-(add-hook 'lua-mode-hook 'smart-tab-mode)
-(add-hook 'latex-mode-common-hook 'smart-tab-mode)
-(add-hook 'python-mode-hook 'smart-tab-mode)
+(add-hook 'c-mode-common-hook 'smart-tabs-mode)
+(add-hook 'lua-mode-hook 'smart-tabs-mode)
+(add-hook 'latex-mode-common-hook 'smart-tabs-mode)
+(add-hook 'python-mode-hook 'smart-tabs-mode)
 
 ;; load protobuf
 ;; (require 'protobuf-mode)
@@ -132,6 +131,9 @@
 
 ;; projectile
 (projectile-global-mode)
+
+;; org_mode
+(load "~/.emacs.d/orgmode.el")
 
 ;; c++11
 (add-hook
