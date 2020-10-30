@@ -8,6 +8,13 @@
  '(elfeed-search-unread-count-face ((t (:foreground "brightred"))))
  '(elfeed-search-unread-title-face ((t (:foreground "brightwhite")))))
 
+(defun parse_arxiv (uri action)
+  (if (eq major-mode 'bibtex-mode)
+      (progn (string-match "arxiv\\.org/\\(pdf\\|abs\\)/\\([0-9]+\\.[0-9]+\\)" uri)
+	     (let ((num (match-string 2 uri)))
+	       (arxiv-get-pdf-add-bibtex-entry
+		num (or buffer-file-name (car org-ref-default-bibliography)) org-ref-pdf-directory))
+	     )))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -20,6 +27,16 @@
    ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
  '(custom-safe-themes
    '("4c9ba94db23a0a3dea88ee80f41d9478c151b07cb6640b33bfc38be7c2415cc4" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "08b8807d23c290c840bbb14614a83878529359eaba1805618b3be7d61b0b0a32" default))
+ '(dnd-protocol-alist
+   '(("^https://arxiv\\.org/\\(pdf\\|abs\\)/[0-9]+\\.[0-9]+" . parse_arxiv)
+     ("^\\(https?\\|ftp\\|file\\|nfs\\):" . org-download-dnd)
+     ("^data:" . org-download-dnd-base64)
+     ("^file:" . org-ref-pdf-dnd-protocol)
+     ("^file:///" . dnd-open-local-file)
+     ("^file://" . dnd-open-file)
+     ("^file:" . dnd-open-local-file)
+     ("^\\(https?\\|ftp\\|file\\|nfs\\)://" . dnd-open-file)
+     ))
  '(ein:output-area-inlined-images t)
  '(elfeed-goodies/entry-pane-position 'top)
  '(elfeed-goodies/entry-pane-size 0.5)
@@ -32,8 +49,19 @@
  '(hl-sexp-background-color "#1c1f26")
  '(nrepl-message-colors
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
+ '(org-download-method 'attach)
+ '(org-ref-create-notes-hook
+   '((lambda nil
+       (org-narrow-to-subtree)
+       (insert
+	(format "cite:%s
+"
+		(org-entry-get
+		 (point)
+		 "Custom_ID")))
+       (insert "tags:"))))
  '(package-selected-packages
-   '(org-ref org-capture-pop-frame org-roam-server org-roam-bibtex org-roam smart-tabs-mode ein airline-themes auto-dim-other-buffers vterm tide cquery ace-window google-c-style helm-ack helm magit-find-file magit-gh-pulls magit-gitflow magit-lfs magit-popup elfeed-web elfeed-org elfeed-goodies elfeed fill-column-indicator slack oauth2 oauth zenburn-theme zenburn yaml-mode visual-regexp-steroids swiper spacegray-theme scala-mode python-environment powerline outline-magic multiple-cursors material-theme markdown-mode markdown-mode+ magit json-mode ibuffer-projectile ibuffer-git helm-themes helm-projectile helm-gtags gh-md ggtags esup epc elpy dakrone-theme cython-mode column-enforce-mode cmake-font-lock auto-complete swift-mode magit-svn elpy yasnippet-snippets yasnippet))
+   '(org-download org-ref org-capture-pop-frame org-roam-server org-roam-bibtex org-roam smart-tabs-mode ein airline-themes auto-dim-other-buffers vterm tide cquery ace-window google-c-style helm-ack helm magit-find-file magit-gh-pulls magit-gitflow magit-lfs magit-popup elfeed-web elfeed-org elfeed-goodies elfeed fill-column-indicator slack oauth2 oauth zenburn-theme zenburn yaml-mode visual-regexp-steroids swiper spacegray-theme scala-mode python-environment powerline outline-magic multiple-cursors material-theme markdown-mode markdown-mode+ magit json-mode ibuffer-projectile ibuffer-git helm-themes helm-projectile helm-gtags gh-md ggtags esup epc elpy dakrone-theme cython-mode column-enforce-mode cmake-font-lock auto-complete swift-mode magit-svn elpy yasnippet-snippets yasnippet))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(python-indent-def-block-scale 2)
  '(python-indent-offset 2)

@@ -20,7 +20,10 @@
 ;;     (start-process "open" "*open*" "open" fpath)))
 (require 'org-ref)
 
-
+;; org-download
+(require 'org-download)
+;; Drag-and-drop to `dired`
+(add-hook 'dired-mode-hook 'org-download-enable)
 
 
 (setq org-default-notes-file (concat org-directory "/notes.org"))
@@ -29,3 +32,7 @@
 (add-hook 'org-shiftleft-final-hook 'windmove-left)
 (add-hook 'org-shiftdown-final-hook 'windmove-down)
 (add-hook 'org-shiftright-final-hook 'windmove-right)
+(add-hook 'bibtex-mode-hook
+	  (lambda ()
+	    (local-set-key (kbd "C-j") 'org-ref-bibtex-hydra/body)
+	    ))

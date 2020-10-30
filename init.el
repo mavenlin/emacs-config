@@ -22,18 +22,16 @@
 
 
 ;; emacs default browser
-(setq browse-url-browser-function 'browse-url-chrome)
-(setq markdown-command "pandoc --from markdown -t html5 --mathjax='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML' --highlight-style pygments")
-(setq markdown-enable-math t)
-(setq markdown-preview-javascript (list "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"))
-(setq markdown-preview-stylesheets (list "http://thomasf.github.io/solarized-css/solarized-light.min.css"))
-
+;; (setq browse-url-browser-function 'browse-url-chrome)
+;; (setq markdown-command "pandoc --from markdown -t html5 --mathjax='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML' --highlight-style pygments")
+;; (setq markdown-enable-math t)
+;; (setq markdown-preview-javascript (list "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"))
+;; (setq markdown-preview-stylesheets (list "http://thomasf.github.io/solarized-css/solarized-light.min.css"))
 
 (load "~/.emacs.d/helm.el")
 
-
 (global-set-key (kbd "M-n") 'mc/mark-next-like-this)
-(global-set-key (kbd "M-N") 'mc/mark-next-word-like-this)
+;; (global-set-key (kbd "M-N") 'mc/mark-next-word-like-this)
 
 (global-set-key (kbd "C-x g") 'magit-status)
 ;; (global-set-key (kbd "M-[") 'mc/mark-previous-word-like-this)
@@ -86,7 +84,6 @@
 (setq fci-rule-width 1)
 
 (add-hook 'c-mode-common-hook 'smart-tabs-mode)
-(add-hook 'lua-mode-hook 'smart-tabs-mode)
 (add-hook 'latex-mode-common-hook 'smart-tabs-mode)
 (add-hook 'python-mode-hook 'smart-tabs-mode)
 
@@ -130,7 +127,7 @@
 (load "~/.emacs.d/powerline.el")
 
 ;; projectile
-(projectile-global-mode)
+;; (projectile-global-mode)
 
 ;; org_mode
 (load "~/.emacs.d/orgmode.el")
@@ -149,6 +146,15 @@
            ("\\<[\\-+]*[0-9]*\\.?[0-9]+\\([ulUL]+\\|[eE][\\-+]?[0-9]+\\)?\\>" . font-lock-constant-face)
            ))
     ) t)
+
+;; dnd chrome
+(defun my-x-dnd-test-function (_window _action types)
+  "X-DND test function that returns copy instead of private as action
+Otherwise the same as the default function"
+  (let ((type (x-dnd-choose-type types)))
+    (when type (cons 'copy type))))
+(setq x-dnd-test-function #'my-x-dnd-test-function)
+
 
 ;; disable menu
 (menu-bar-mode -1)
@@ -171,9 +177,9 @@
 (global-set-key (kbd "M-%") 'vr/query-replace)
 
 ;; yasnippet
-(add-to-list 'load-path "~/.emacs.d/snippets")
-(require 'yasnippet)
-(yas-global-mode 1)
+;; (add-to-list 'load-path "~/.emacs.d/snippets")
+;; (require 'yasnippet)
+;; (yas-global-mode 1)
 
 ;; ace-window
 (global-set-key (kbd "M-o") 'ace-window)
