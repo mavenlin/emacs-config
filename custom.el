@@ -35,8 +35,7 @@
      ("^file:///" . dnd-open-local-file)
      ("^file://" . dnd-open-file)
      ("^file:" . dnd-open-local-file)
-     ("^\\(https?\\|ftp\\|file\\|nfs\\)://" . dnd-open-file)
-     ))
+     ("^\\(https?\\|ftp\\|file\\|nfs\\)://" . dnd-open-file)))
  '(ein:output-area-inlined-images t)
  '(elfeed-goodies/entry-pane-position 'top)
  '(elfeed-goodies/entry-pane-size 0.5)
@@ -61,7 +60,7 @@
 		 "Custom_ID")))
        (insert "tags:"))))
  '(package-selected-packages
-   '(org-download org-ref org-capture-pop-frame org-roam-server org-roam-bibtex org-roam smart-tabs-mode ein airline-themes auto-dim-other-buffers vterm tide cquery ace-window google-c-style helm-ack helm magit-find-file magit-gh-pulls magit-gitflow magit-lfs magit-popup elfeed-web elfeed-org elfeed-goodies elfeed fill-column-indicator slack oauth2 oauth zenburn-theme zenburn yaml-mode visual-regexp-steroids swiper spacegray-theme scala-mode python-environment powerline outline-magic multiple-cursors material-theme markdown-mode markdown-mode+ magit json-mode ibuffer-projectile ibuffer-git helm-themes helm-projectile helm-gtags gh-md ggtags esup epc elpy dakrone-theme cython-mode column-enforce-mode cmake-font-lock auto-complete swift-mode magit-svn elpy yasnippet-snippets yasnippet))
+   '(bazel-mode csharp-mode org-download org-ref org-capture-pop-frame org-roam-server org-roam-bibtex org-roam smart-tabs-mode ein airline-themes auto-dim-other-buffers vterm tide cquery ace-window google-c-style helm-ack helm magit-find-file magit-gh-pulls magit-gitflow magit-lfs magit-popup elfeed-web elfeed-org elfeed-goodies elfeed fill-column-indicator slack oauth2 oauth zenburn-theme zenburn yaml-mode visual-regexp-steroids swiper spacegray-theme scala-mode python-environment powerline outline-magic multiple-cursors material-theme markdown-mode markdown-mode+ magit json-mode ibuffer-projectile ibuffer-git helm-themes helm-projectile helm-gtags gh-md ggtags esup epc elpy dakrone-theme cython-mode column-enforce-mode cmake-font-lock auto-complete swift-mode magit-svn elpy yasnippet-snippets yasnippet))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(python-indent-def-block-scale 2)
  '(python-indent-offset 2)
