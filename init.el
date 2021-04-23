@@ -83,9 +83,19 @@
 (setq fci-rule-color "lightgray")
 (setq fci-rule-width 1)
 
-(add-hook 'c-mode-common-hook 'smart-tabs-mode)
-(add-hook 'latex-mode-common-hook 'smart-tabs-mode)
-(add-hook 'python-mode-hook 'smart-tabs-mode)
+;; (add-hook 'c-mode-common-hook 'smart-tabs-mode)
+;; (add-hook 'latex-mode-common-hook 'smart-tabs-mode)
+;; (add-hook 'python-mode-hook 'smart-tabs-mode)
+
+(add-hook 'after-init-hook 'global-company-mode)
+;; Trigger completion immediately.
+(setq company-idle-delay 0)
+;; Number the candidates (use M-1, M-2 etc to select completions).
+(setq company-show-numbers t)
+(require 'company-tabnine)
+(add-to-list 'company-backends #'company-tabnine)
+
+;; (add-to-list 'company-backends 'company-tabnine)
 
 ;; load protobuf
 ;; (require 'protobuf-mode)
