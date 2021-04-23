@@ -195,7 +195,7 @@ Otherwise the same as the default function"
 (global-set-key (kbd "M-o") 'ace-window)
 (setq aw-dispatch-always t)
 
-(load "~/.emacs.d/elfeed.el")
+;; (load "~/.emacs.d/elfeed.el")
 
 ;; ace-jump-mode
 (autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t)
