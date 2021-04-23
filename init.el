@@ -50,13 +50,13 @@
 
 (load-theme 'zenburn t)
 
-(setq TeX-PDF-mode t)
-;; Turn on RefTeX for AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/reftex_5.html
-(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-;; Make RefTeX interact with AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/AUCTeX_002dRefTeX-Interface.html
-(setq reftex-plug-into-AUCTeX t)
-(setq TeX-parse-self t) ; Enable parse on load.
-(setq TeX-auto-save t) ; Enable parse on save.
+;; (setq TeX-PDF-mode t)
+;; ;; Turn on RefTeX for AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/reftex_5.html
+;; (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+;; ;; Make RefTeX interact with AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/AUCTeX_002dRefTeX-Interface.html
+;; (setq reftex-plug-into-AUCTeX t)
+;; (setq TeX-parse-self t) ; Enable parse on load.
+;; (setq TeX-auto-save t) ; Enable parse on save.
 
 ;; remove the trailing white spaces when emacs saves a buffer
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -69,10 +69,10 @@
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 ;; define cpplint function to check the code style
-(defun cpplint ()
-  "check source code format according to Google Style Guide"
-  (interactive)
-  (compilation-start (concat "python ~/.emacs.d/google/cpplint.py " (buffer-file-name))))
+;; (defun cpplint ()
+;;   "check source code format according to Google Style Guide"
+;;   (interactive)
+;;   (compilation-start (concat "python ~/.emacs.d/google/cpplint.py " (buffer-file-name))))
 
 ;; enforce the line length to be 80
 ;; (require 'column-enforce-mode)
@@ -129,8 +129,8 @@
 (global-set-key (kbd "S-<left>") 'windmove-left)
 
 ;; ibuffer mode
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-(autoload 'ibuffer "ibuffer" "List buffers." t)
+;; (global-set-key (kbd "C-x C-b") 'ibuffer)
+;; (autoload 'ibuffer "ibuffer" "List buffers." t)
 
 ;; powerline
 (require 'powerline)
@@ -140,7 +140,7 @@
 ;; (projectile-global-mode)
 
 ;; org_mode
-(load "~/.emacs.d/orgmode.el")
+;; (load "~/.emacs.d/orgmode.el")
 
 ;; c++11
 (add-hook
@@ -158,12 +158,12 @@
     ) t)
 
 ;; dnd chrome
-(defun my-x-dnd-test-function (_window _action types)
-  "X-DND test function that returns copy instead of private as action
-Otherwise the same as the default function"
-  (let ((type (x-dnd-choose-type types)))
-    (when type (cons 'copy type))))
-(setq x-dnd-test-function #'my-x-dnd-test-function)
+;; (defun my-x-dnd-test-function (_window _action types)
+;;   "X-DND test function that returns copy instead of private as action
+;; Otherwise the same as the default function"
+;;   (let ((type (x-dnd-choose-type types)))
+;;     (when type (cons 'copy type))))
+;; (setq x-dnd-test-function #'my-x-dnd-test-function)
 
 
 ;; disable menu
@@ -174,7 +174,7 @@ Otherwise the same as the default function"
 
 ;; elpy
 ;; (package-initialize)
-(elpy-enable)
+;; (elpy-enable)
 
 ;; save history
 (setq history-length t)
@@ -183,8 +183,8 @@ Otherwise the same as the default function"
 (setq savehist-max-history-length 100000)
 (setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
 
-(require 'visual-regexp-steroids)
-(global-set-key (kbd "M-%") 'vr/query-replace)
+;; (require 'visual-regexp-steroids)
+;; (global-set-key (kbd "M-%") 'vr/query-replace)
 
 ;; yasnippet
 ;; (add-to-list 'load-path "~/.emacs.d/snippets")
@@ -192,14 +192,14 @@ Otherwise the same as the default function"
 ;; (yas-global-mode 1)
 
 ;; ace-window
-(global-set-key (kbd "M-o") 'ace-window)
-(setq aw-dispatch-always t)
+;; (global-set-key (kbd "M-o") 'ace-window)
+;; (setq aw-dispatch-always t)
 
 ;; (load "~/.emacs.d/elfeed.el")
 
 ;; ace-jump-mode
-(autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t)
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+;; (autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t)
+;; (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
 (require 'airline-themes)
 (load-theme 'airline-bubblegum t)
@@ -211,6 +211,6 @@ Otherwise the same as the default function"
       (tool-bar-mode -1))
 )
 
-(case system-type
-   ((gnu/linux) (set-frame-font "inconsolata 10"))
-   ((darwin) (set-frame-font "inconsolata 14")))
+;; (case system-type
+;;    ((gnu/linux) (set-frame-font "inconsolata 10"))
+;;    ((darwin) (set-frame-font "inconsolata 14")))
