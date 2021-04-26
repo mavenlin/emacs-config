@@ -1,6 +1,0 @@
-* feeds                                                              :elfeed:
-** arxiv                                                              :arxiv:
-*** http://arxiv.org/rss/stat.ML                                         :ML:
-*** http://arxiv.org/rss/cs.AI                                           :AI:
-*** http://arxiv.org/rss/cs.NE                                           :NE:
-*** http://arxiv.org/rss/cs.LG                                           :LG:

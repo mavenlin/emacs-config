@@ -174,7 +174,7 @@
 
 ;; elpy
 ;; (package-initialize)
-;; (elpy-enable)
+(elpy-enable)
 
 ;; save history
 (setq history-length t)
