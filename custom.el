@@ -20,7 +20,7 @@
  '(nrepl-message-colors
    '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
  '(package-selected-packages
-   '(company-c-headers company-math company company-tabnine bazel-mode dockerfile-mode docker python-mode airline-themes auto-dim-other-buffers vterm tide cquery google-c-style helm-ack helm magit-find-file magit-gh-pulls magit-gitflow magit-lfs magit-popup fill-column-indicator zenburn-theme zenburn yaml-mode visual-regexp-steroids swiper spacegray-theme powerline outline-magic multiple-cursors markdown-mode markdown-mode+ magit json-mode helm-themes helm-projectile helm-gtags gh-md ggtags esup epc elpy cython-mode column-enforce-mode cmake-font-lock auto-complete swift-mode magit-svn elpy))
+   '(yapfify company-c-headers company-math company company-tabnine bazel-mode dockerfile-mode docker python-mode airline-themes auto-dim-other-buffers vterm tide cquery google-c-style helm-ack helm magit-find-file magit-gh-pulls magit-gitflow magit-lfs magit-popup fill-column-indicator zenburn-theme zenburn yaml-mode visual-regexp-steroids swiper spacegray-theme powerline outline-magic multiple-cursors markdown-mode markdown-mode+ magit json-mode helm-themes helm-projectile helm-gtags gh-md ggtags esup epc elpy cython-mode column-enforce-mode cmake-font-lock auto-complete swift-mode magit-svn elpy))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(python-indent-def-block-scale 2)
  '(python-indent-offset 2)

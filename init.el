@@ -83,6 +83,8 @@
 (setq fci-rule-color "lightgray")
 (setq fci-rule-width 1)
 
+(add-hook 'python-mode-hook 'yapf-mode)
+
 ;; (add-hook 'c-mode-common-hook 'smart-tabs-mode)
 ;; (add-hook 'latex-mode-common-hook 'smart-tabs-mode)
 ;; (add-hook 'python-mode-hook 'smart-tabs-mode)
